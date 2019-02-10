@@ -11,27 +11,26 @@ namespace Sfp;
 
 class Even {
 	
+	private $data = [];
+
 	function __construct(){
 
 		if (($handle = fopen("../assets/numbers.csv", "r")) !== FALSE) 
 		{
-			$data = array_map('str_getcsv', file('../assets/numbers.csv'));
-			self::execute($data);
+			$this->data = array_map('str_getcsv', file('../assets/numbers.csv'));
 		    fclose($handle);
 		}
-
 	}
 
-	public function execute($data):int{
+	public function execute():int{
 
 			$counter = 0;
-			for($i=0;$i<count($data);$i++)
+			for($i=0;$i<count($this->data);$i++)
 			{
-				if($data[$i][0] % 2 == 0)
+				if($this->data[$i][0] % 2 == 0)
 					$counter++;
 			}
-			echo " There are {$counter} Even numbers in the list";
-
+			return $counter;
 	}
 }
 
