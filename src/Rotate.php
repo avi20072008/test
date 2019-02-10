@@ -10,15 +10,15 @@ namespace Sfp;
 
 class Rotate {
 	
-	private $rotCount = 0;
-	private $data = [];
+	protected $rotCount = 0;
+	protected $data = [];
 
-	function __construct($rotCount){
+	public function __construct($rotCount){
 
 		$this->rotCount = $rotCount;
 	}
 
-	public function execute(){
+	public function execute(): array{
 
 		// Read JSON file
 		$jsonContent = file_get_contents("../assets/rotate.json");
@@ -36,7 +36,8 @@ class Rotate {
 	}
 }
 
-$obj = new Rotate(1);
-print_r($obj->execute());
+// Uncomment to test code.
+// $obj = new Rotate(2);
+// print_r($obj->execute());
 
 ?>

@@ -6,20 +6,18 @@
         Usage  #    This module returns total number of Even numbers 
         			from Numbers.csv file.
     	------------------------------------------------------------*/
-
+	
 namespace Sfp;
+
+include 'Helper.php';
 
 class Even {
 	
 	private $data = [];
 
-	function __construct(){
-
-		if (($handle = fopen("../assets/numbers.csv", "r")) !== FALSE) 
-		{
-			$this->data = array_map('str_getcsv', file('../assets/numbers.csv'));
-		    fclose($handle);
-		}
+	public function __construct(){
+		//load CSV file using helper function
+		$this->data = \Helper::loadCSVFile("../assets/numbers.csv");
 	}
 
 	public function execute():int{
@@ -34,7 +32,8 @@ class Even {
 	}
 }
 
-$obj = new Even();
-$obj->execute();
+// Uncomment to test code.
+// $obj = new Even();
+// echo $obj->execute();
 
 ?>
