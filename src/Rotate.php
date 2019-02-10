@@ -10,10 +10,10 @@ namespace Sfp;
 
 class Rotate {
 	
-	private $rotCount = 0;
-	private $data = [];
+	protected $rotCount = 0;
+	protected $data = [];
 
-	function __construct($rotCount){
+	public function __construct($rotCount){
 
 		$this->rotCount = $rotCount;
 	}
@@ -37,7 +37,7 @@ class Rotate {
 }
 
 // Uncomment to test code.
-// $obj = new Rotate(1);
-// $obj->execute();
+// $obj = new Rotate(2);
+// print_r($obj->execute());
 
 ?>

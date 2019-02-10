@@ -8,20 +8,18 @@
     	------------------------------------------------------------*/
 
 namespace Sfp;
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+include 'Helper.php';
 
 class Math {
 	
 	private $data = [];
 
 	function __construct(){
-
-		if (($handle = fopen("../assets/tabular.csv", "r")) !== FALSE) 
-		{
-			$this->data = array_map('str_getcsv', file('../assets/tabular.csv'));
-		    fclose($handle);
-		}
-
-	}	// end of constructor
+		//load CSV file using helper function
+		$this->data = \Helper::loadCSVFile("../assets/tabular.csv");
+	}
 
 	public function execute():float{
 
@@ -42,7 +40,7 @@ class Math {
 				// float has 10 decimal precision
 				return number_format((float) $avg, 10, '.', '');
 			}
-	}	// end of execute function
+	}
 }
 
 // Uncomment to test code.
