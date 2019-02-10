@@ -18,7 +18,7 @@ class Rotate {
 		$this->rotCount = $rotCount;
 	}
 
-	public function execute(){
+	public function execute(): array{
 
 		// Read JSON file
 		$jsonContent = file_get_contents("../assets/rotate.json");
@@ -36,7 +36,8 @@ class Rotate {
 	}
 }
 
-$obj = new Rotate(1);
-print_r($obj->execute());
+// Uncomment to test code.
+// $obj = new Rotate(1);
+// $obj->execute();
 
 ?>

@@ -45,7 +45,8 @@ class Math {
 	}	// end of execute function
 }
 
-$obj = new Math();
-echo $obj->execute();
+// Uncomment to test code.
+// $obj = new Math();
+// echo $obj->execute();
 
 ?>

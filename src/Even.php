@@ -34,7 +34,8 @@ class Even {
 	}
 }
 
-$obj = new Even();
-$obj->execute();
+// Uncomment to test code.
+// $obj = new Even();
+// $obj->execute();
 
 ?>
